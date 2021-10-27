@@ -1,4 +1,6 @@
+```vbscript
 // 搜索关键词
+Dim totalRet = ""
 Dim keyWords = ""
 // 职位名称
 Dim jobTitle = "招聘"
@@ -24,7 +26,8 @@ Dim scrapWord = ""
 Dim page = 1 
 Dim pageNum = 10
 Dim totalPage = 5
-
+Dim freeRet = ""
+Dim freeNum = ""
 
 hWeb = WebBrowser.Create("chrome","https://ehire.51job.com/navigate.aspx",30000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"sBrowserPath":"","sStartArgs":""})
 #icon("@res:mhulerr5-sek1-vu7u-cbm7-ap6l58rlhu4t.png")
@@ -89,7 +92,18 @@ For x = 1 To totalPage Step 1
 	
 	// 循环当前页面数据
 	For i = 1 To iRet Step 1 
+		#icon("@res:eq1cam7s-173e-7rp1-tu40-h1o7a9mt5q2l.png")
+		
+		
+		
+		// exit()
+		
+		// 获取总页数
+		freeRet = Text.Get({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"DIV","parentid":"chat_select_job","aaname":"剩余Hi聊数：(购买)/(免费)"}]},10000,{"bContinueOnError":False,"iDelayAfter":2000,"iDelayBefore":2000,"bSetForeground":True})
+		TracePrint(freeRet)		
 		// 设置元素属性
+		freeNum = Cint(Regex.FindStr(totalRet,"(?<=/).+",0))
+		TracePrint(freeNum)
 		#icon("@res:pn127foe-fqcr-s8cp-04p3-van96p0qan9m.png")
 		UiElement.SetAttribute({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"UL","parentid":"search_resume_list"}]},"id","ul_0",{"bContinueOnError":False,"iDelayAfter":1000,"iDelayBefore":1000})
 		Try 3
@@ -172,3 +186,5 @@ Next
 // 循环获取到的数据
 
 
+
+```

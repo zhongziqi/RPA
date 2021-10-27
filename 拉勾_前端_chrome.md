@@ -1,3 +1,4 @@
+```vbscript
 // ËÑË÷¹Ø¼ü´Ê
 Dim arrSelItem = ""
 Dim totalRet = ""
@@ -129,4 +130,7 @@ For x = 1 To totalPage Step 1
 		
 	Next
 Next
+
+
+```
 
