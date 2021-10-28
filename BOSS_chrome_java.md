@@ -1,4 +1,7 @@
 ```vbscript
+
+
+
 Dim dictScrollPostion = ""
 Dim arrayData = ""
 Dim arrayDataHello = ""
@@ -32,28 +35,30 @@ Dim leftTime = ""
 Dim number = 0
 Dim require_react = ""
 Dim working = ""
-Dim certificate = ""
-
+Dim certificate =""
+Dim active_status =""
 
 hWeb = WebBrowser.Create("chrome","https://www.zhipin.com/web/boss/index",30000,{"bContinueOnError":False,"iDelayAfter":5000,"iDelayBefore":200,"sBrowserPath":"","sStartArgs":""})
-#icon("@res:hn0vj390-qug9-1dej-vl7h-2749fohotufq.png")
-Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"A","type":"desktop","parentid":"main","css-selector":"body>div>div>div>div>dl.menu-recommend>dt>a[ka='menu-geek-recommend']"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":200,"iDelayBefore":3000,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
-// Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"A","type":"desktop","parentid":"main","aaname":"推荐牛人"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":200,"iDelayBefore":3000,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
-// Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"A","type":"desktop","parentid":"main","aaname":"推荐牛人 "}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":200,"iDelayBefore":3000,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
-
+#icon("@res:fctnpnfr-rpmp-ch3h-m1fo-n7rpcnl9jt4h.png")
+// Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"A","type":"desktop","parentid":"main","css-selector":'''function(){return document.querySelector("body>div>div>div>div>dl.menu-recommend>dt>a[ka="menu-geek-recommend"]")}'''}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":200,"iDelayBefore":3000,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
 #icon("@res:h53mgibu-pn88-cpmd-oqtk-3ugglfuc88ks.png")
-Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"I","css-selector":"body>div>div>div>div>div>div>div>div>div>div>div>i"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":200,"iDelayBefore":1000,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+// Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"A","type":"desktop","parentid":"main","css-selector":"body>div>div>div>div>dl.menu-recommend>dt>a[ka='menu-geek-recommend']"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":200,"iDelayBefore":3000,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+
+Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"A","type":"desktop","parentid":"main","css-selector":"body>div>div>div>div>dl.menu-recommend>dt>a[ka='menu-geek-recommend']"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":200,"iDelayBefore":3000,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+
+
+Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"I","css-selector":"body>div>div>div>div>div>div>div>div>div>div>div>i"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":1000,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
 arrayData = UiElement.DataScrap({"html":[{"id":"recommendContent","parentid":"main","tag":"DIV"}],"wnd":[{"app":"iexplore","cls":"IEFrame","title":"*"},{"cls":"Internet Explorer_Server"}]},{"ExtractTable":0,"Columns":[{"selecors":[{"tag":"div","index":1,"className":"recommend-container page-container page-inner","value":"div:nth-child(1)","prefix":""},{"tag":"div","index":0,"className":"page-header","value":"div.page-header","prefix":">"},{"tag":"div","index":2,"className":"recommend-top-dropdown ui-dropmenu ui-dropmenu-visible ui-dropmenu-label-arrow ui-dropmenu-drop-arrow","value":"div:nth-child(2)","prefix":">"},{"tag":"div","index":2,"className":"ui-dropmenu-list","value":"div:nth-child(2)","prefix":">"},{"tag":"div","index":0,"value":"div","prefix":">"},{"tag":"ul","index":2,"value":"ul:nth-child(2)","prefix":">"},{"tag":"li","value":"li","index":0,"prefix":">"}],"props":["text"]}]},{"objNextLinkElement":"","iMaxNumberOfPage":5,"iMaxNumberOfResult":-1,"iDelayBetweenMS":1000,"bContinueOnError":False})
 #icon("@res:u6vlevap-aiun-d2k0-lj4e-m9tov7mnqhh9.png")
-Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"I","css-selector":"body>div>div>div>div>div>div>div>div>div>div>div>i"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":200,"iDelayBefore":1000,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
+Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"I","css-selector":"body>div>div>div>div>div>div>div>div>div>div>div>i"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":1000,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
 For i = 1 To 1 Step 1
     #icon("@res:0jsj6pjm-372p-qer5-dnsu-r15sbjuv3pmb.png")
     Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"I","css-selector":"body>div>div>div>div>div>div>div>div>div>div>div>i"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":1000,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
     TracePrint(i & ':i---')
-    #icon("@res:00g7qaeg-mkbb-n8u3-il22-qf89dgjdjom8.png")
-    Keyboard.InputText({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"INPUT","css-selector":"body>div>div>div>div>div>div>div>div>div>div>div.ui-dropmenu-list>div>input"}]},"前端",True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
     // ui-dropmenu-label
-    #icon("@res:pvumfbkj-0cs3-shpv-3ev0-eomf3ahdpi6g.png")
+    #icon("@res:00g7qaeg-mkbb-n8u3-il22-qf89dgjdjom8.png")
+    Keyboard.InputText({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"INPUT","css-selector":"body>div>div>div>div>div>div>div>div>div>div>div.ui-dropmenu-list>div>input"}]},"java中级",True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
+    #icon("@res:5sepklv4-hniv-964c-48ab-d0cat09do46b.png")
     // Mouse.Action({"html":[{"parentid":"recommendContent","tag":"LI" ,"attrMap":{"css-selector":"div.ui-dropmenu-list>div>ul>li:nth-child("& i &")"}}],"wnd":[{"app":"iexplore","cls":"IEFrame","title":"*"},{"cls":"Internet Explorer_Server"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":5000,"iDelayBefore":1000,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
     Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"LI","css-selector":"body>div>div>div>div>div>div>div>div>div>div>div>ul>li","idx":0}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":3000,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
    
@@ -96,9 +101,9 @@ For i = 1 To 1 Step 1
         // 8.要求掌握react
         require_react = ""
         // 9.学历
-        certificate = ""
-       
-       
+        certificate=""
+        // 活跃状态
+        active_status =""
        
         // 判断当前候选人是否被其他招聘顾问询问过
         #icon("@res:m88s2bqd-0iok-t3uv-3lfb-6dks6rmgoo4u.png")
@@ -144,19 +149,19 @@ For i = 1 To 1 Step 1
        
         //1. 按钮文本是否为"继续沟通"
         #icon("@res:80me7dm2-gukr-6uo4-chh9-asd0pee45v95.png")
-        sRet = UiElement.GetValue({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"BUTTON","type":"button","parentid":"recommend-list","idx":y-1}]},{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200})
+        sRet = UiElement.GetValue({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"BUTTON","type":"button","parentid":"recommend-list","idx":y-1}]},{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500})
         TracePrint(sRet& "--是否继续沟通")
        
         // 2. 姓名正则 排除含外包/外派人员
         findName = Regex.FindStr(arrayData[y-1][0],"外包|外派",0)
         TracePrint("源文本："&arrayData[y-1][0] &"匹配后显示："&findName& "--姓名")
        
-        // 3. 工作年限 (大于等于三年 且不包含“应届”)
+        // 3. 工作年限 (大于等于三年)
         workYear = cint(DigitFromStr(Regex.FindStr(arrayData[y-1][3],'([0-9]+年)(?!应届)',0)))
         TracePrint(workYear& "--工作年限")
        
         // 4. 求职期望(含前端/Javascript/HTML/web)
-        expectJob = Regex.FindStr(arrayData[y-1][4],'前端|(?i)javascript|html|(?i)web',0)
+        expectJob = Regex.FindStr(arrayData[y-1][4],'后端|(?i)java',0)
         // expectJob = Regex.FindStr(arrayData[y-1][4],'(?i)ios',0)
         TracePrint("源文本："& arrayData[y-1][4] &"匹配后显示："& expectJob & "--求职期望")
        
@@ -175,14 +180,19 @@ For i = 1 To 1 Step 1
         // 8.要求掌握react
         // require_react = Regex.FindStr(arrayData[y-1][5],'(?i)react',0)
         // TracePrint(findName&"--"&require_react& "--require_react")
-        require_react = Regex.FindStr(arrayData[y-1][5],'小程序|(?i)react',0)
+        require_react = Regex.FindStr(arrayData[y-1][5],'并发|高并发|(?i)springcloud|(?!)redis|(?!)mq|sql优化|SQL优化',0)
        
-        // 8. 学历（大专|本科|硕士）
+       
+        // 9. 学历（大专|本科|硕士）
         certificate = cint(DigitFromStr(Regex.FindStr(arrayData[y-1][3],'大专|本科|硕士',0)))
         TracePrint("源文本："& arrayData[y-1][3] &"匹配后显示："& certificate & "--学历")
        
+        // 10. 活跃状态
+        active_status = Regex.FindStr(arrayData[y-1][1],"刚刚|今日|3日|本周|2周",0)
+        TracePrint(active_status& "--活跃状态")
        
-        If sRet <> "继续沟通" And findName ="" And workYear >= 5 And expectJob <> "" And age <=30 And summary ="" And working ="" And require_react <> "" And certificate <> ""
+       
+        If sRet <> "继续沟通" And findName ="" And workYear >= 4 And expectJob <> "" And age <=38 And summary ="" And working ="" And require_react <> "" And certificate <>"" And active_status <>""
             #icon("@res:gtso4gfa-bhqo-ho3k-5ume-t7t81e8rlnao.png")
             // Mouse.Hover({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"BUTTON","parentid":"recommend-list","idx":y-1}]},10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
             #icon("@res:a96v8b09-hmu1-vpf4-al11-lmevupf6sli4.png")
