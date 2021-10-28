@@ -51,6 +51,8 @@ For i = 1 To 1 Step 1
     #icon("@res:ktuvajta-1jpm-6u4q-kf2k-satmaepiijag.png")
     Mouse.Action({"wnd":[{"cls":"MozillaWindowClass","title":"*","app":"firefox"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"I","css-selector":"body>div>div>div>div>div>div>div>div>div>div>div>i"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":1000,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
     TracePrint(i & ':i---')
+#icon("@res:00g7qaeg-mkbb-n8u3-il22-qf89dgjdjom8.png")
+    Keyboard.InputText({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"INPUT","css-selector":"body>div>div>div>div>div>div>div>div>div>div>div.ui-dropmenu-list>div>input"}]},"Ç°¶Ë",True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
     // ui-dropmenu-label
     #icon("@res:cvn4vcp4-vo47-0pnj-dp69-h0qmdcn8k32e.png")
     // Mouse.Action({"html":[{"parentid":"recommendContent","tag":"LI" ,"attrMap":{"css-selector":"div.ui-dropmenu-list>div>ul>li:nth-child("& i &")"}}],"wnd":[{"app":"iexplore","cls":"IEFrame","title":"*"},{"cls":"Internet Explorer_Server"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":5000,"iDelayBefore":1000,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
