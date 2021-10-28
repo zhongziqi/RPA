@@ -97,7 +97,8 @@ For i = 1 To 1 Step 1
         require_react = ""
         // 9. 学历
         certificate = ""
-        
+        // 10. 活跃状态
+        active_status = ""
         
         
         // 判断当前候选人是否被其他招聘顾问询问过
@@ -179,8 +180,13 @@ For i = 1 To 1 Step 1
         certificate = cint(DigitFromStr(Regex.FindStr(arrayData[y-1][3],'大专|本科|硕士',0)))
         TracePrint("源文本："& arrayData[y-1][3] &"匹配后显示："& certificate & "--学历")
         
+        // 10. 活跃状态
+        active_status = Regex.FindStr(arrayData[y-1][1],"刚刚|今日|3日|本周|2周",0)
+        TracePrint(active_status& "--活跃状态")
+            
+            
         
-        If sRet <> "继续沟通" And findName ="" And workYear >= 5 And expectJob <> "" And age <=30 And summary ="" And working ="" And require_react <> "" And certificate <>""
+        If sRet <> "继续沟通" And findName ="" And workYear >= 5 And expectJob <> "" And age <=30 And summary ="" And working ="" And require_react <> "" And certificate <>"" And active_status <>""
             #icon("@res:9dius7o2-0t3v-kb14-hk2u-7m62k27kvlf2.png")
             // Mouse.Hover({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"BUTTON","parentid":"recommend-list","idx":y-1}]},10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
             #icon("@res:a96v8b09-hmu1-vpf4-al11-lmevupf6sli4.png")
