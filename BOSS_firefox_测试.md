@@ -1,5 +1,4 @@
 ```vbscript
-
 Dim dictScrollPostion = ""
 Dim arrayData = ""
 Dim arrayDataHello = ""
@@ -51,158 +50,158 @@ For i = 1 To 1 Step 1
     #icon("@res:ktuvajta-1jpm-6u4q-kf2k-satmaepiijag.png")
     Mouse.Action({"wnd":[{"cls":"MozillaWindowClass","title":"*","app":"firefox"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"I","css-selector":"body>div>div>div>div>div>div>div>div>div>div>div>i"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":1000,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
     TracePrint(i & ':i---')
-???#icon("@res:coceg44o-um5m-ja1k-2d04-ml9v7g8dtkds.png")
-????Keyboard.InputText({"wnd":[{"cls":"MozillaWindowClass","title":"*","app":"firefox"}],"html":[{"tag":"INPUT","css-selector":"body>div>div>div>div>div>div>div>div>div>div>div.ui-dropmenu-list>div>input"}]},"Ç°¶Ë",True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":500,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
-    // ui-dropmenu-label
+    #icon("@res:je8kuhpr-gn8r-rpaq-rfkf-a2drmmg5le9f.png")
+    Keyboard.InputText({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"INPUT","css-selector":"body>div>div>div>div>div>div>div>div>div>div>div.ui-dropmenu-list>div>input"}]},"æµ‹è¯•",True,20,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":800,"bSetForeground":True,"sSimulate":"message","bValidate":False,"bClickBeforeInput":False})
+    // "css-selector":"body>div>div>div>div>div>div>div>div>div>div>div.ui-dropmenu-list>div>input"
     #icon("@res:cvn4vcp4-vo47-0pnj-dp69-h0qmdcn8k32e.png")
     // Mouse.Action({"html":[{"parentid":"recommendContent","tag":"LI" ,"attrMap":{"css-selector":"div.ui-dropmenu-list>div>ul>li:nth-child("& i &")"}}],"wnd":[{"app":"iexplore","cls":"IEFrame","title":"*"},{"cls":"Internet Explorer_Server"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":5000,"iDelayBefore":1000,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
     Mouse.Action({"wnd":[{"cls":"MozillaWindowClass","title":"*","app":"firefox"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"LI","css-selector":"body>div>div>div>div>div>div>div>div>div>div>div>ul>li","idx":0}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":3000,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
-    
-    // »ñÈ¡ÍÆ¼öµÄËùÓĞºòÑ¡ÈËÊı¾İ--µ÷ÊÔÊ±×¢ÊÍ
+   
+    // è·å–æ¨èçš„æ‰€æœ‰å€™é€‰äººæ•°æ®--è°ƒè¯•æ—¶æ³¨é‡Š
     Do While bRet= False
         #icon("@res:default.png")
-        bRet = Text.Exists({"wnd":[{"cls":"MozillaWindowClass","title":"*","app":"firefox"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"DIV","parentid":"recommend-list"}]},"Ã»ÓĞ¸ü¶à","instr",1,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True})
+        bRet = Text.Exists({"wnd":[{"cls":"MozillaWindowClass","title":"*","app":"firefox"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"DIV","parentid":"recommend-list"}]},"æ²¡æœ‰æ›´å¤š","instr",1,10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True})
         TracePrint( bRet)
         Mouse.Wheel(20,"down", [],{"iDelayAfter":1000,"iDelayBefore":1000})
         // TracePrint(bRet)
     Loop
-    
-    // Ê¹ÓÃÖĞµÄÅÀ³æ´úÂë
+   
+    // ä½¿ç”¨ä¸­çš„çˆ¬è™«ä»£ç 
     arrayData = UiElement.DataScrap({"wnd":[{"cls":"MozillaWindowClass","title":"*","app":"firefox"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"DIV","id":"recommend-list"}]},{"ExtractTable":0,"Columns":[{"selecors":[{"tag":"div","index":0,"className":"sec-content candidate-card","value":"div.sec-content.candidate-card","prefix":""},{"tag":"ul","index":0,"className":"recommend-card-list ul-less-height","value":"ul.recommend-card-list.ul-less-height","prefix":">"},{"tag":"li","value":"li","index":0,"prefix":">"},{"tag":"div","index":0,"className":"","value":"div","prefix":">"},{"tag":"div","index":0,"className":"geek-info-card less-height","value":"div.geek-info-card.less-height","prefix":">"},{"tag":"div","index":0,"className":"candidate-list-content","value":"div.candidate-list-content","prefix":">"},{"tag":"div","index":0,"className":"card-inner","value":"div.card-inner","prefix":">"},{"tag":"div","index":0,"className":"col-2","value":"div.col-2","prefix":">"},{"tag":"div","index":0,"className":"name","value":"div.name","prefix":">"}],"props":["text"]},{"selecors":[{"tag":"div","index":0,"className":"sec-content candidate-card","value":"div.sec-content.candidate-card","prefix":""},{"tag":"ul","index":0,"className":"recommend-card-list ul-less-height","value":"ul.recommend-card-list.ul-less-height","prefix":">"},{"tag":"li","value":"li","index":0,"prefix":">"},{"tag":"div","index":0,"className":"","value":"div","prefix":">"},{"tag":"div","index":0,"className":"geek-info-card less-height","value":"div.geek-info-card.less-height","prefix":">"},{"tag":"div","index":0,"className":"candidate-list-content","value":"div.candidate-list-content","prefix":">"},{"tag":"div","index":0,"className":"card-inner","value":"div.card-inner","prefix":">"},{"tag":"div","index":0,"className":"col-2","value":"div.col-2","prefix":">"},{"tag":"div","index":0,"className":"name","value":"div.name","prefix":">"},{"tag":"span","index":0,"className":"label-text","value":"span.label-text","prefix":">"}],"props":["text"]},{"selecors":[{"tag":"div","index":0,"className":"sec-content candidate-card","value":"div.sec-content.candidate-card","prefix":""},{"tag":"ul","index":0,"className":"recommend-card-list ul-less-height","value":"ul.recommend-card-list.ul-less-height","prefix":">"},{"tag":"li","value":"li","index":0,"prefix":">"},{"tag":"div","index":0,"className":"","value":"div","prefix":">"},{"tag":"div","index":0,"className":"geek-info-card less-height","value":"div.geek-info-card.less-height","prefix":">"},{"tag":"div","index":0,"className":"candidate-list-content","value":"div.candidate-list-content","prefix":">"},{"tag":"div","index":0,"className":"card-inner","value":"div.card-inner","prefix":">"},{"tag":"div","index":0,"className":"col-1","value":"div.col-1","prefix":">"},{"tag":"div","index":0,"className":"salary","value":"div.salary","prefix":">"}],"props":["text"]},{"selecors":[{"tag":"div","index":0,"className":"sec-content candidate-card","value":"div.sec-content.candidate-card","prefix":""},{"tag":"ul","index":0,"className":"recommend-card-list ul-less-height","value":"ul.recommend-card-list.ul-less-height","prefix":">"},{"tag":"li","value":"li","index":0,"prefix":">"},{"tag":"div","index":0,"className":"","value":"div","prefix":">"},{"tag":"div","index":0,"className":"geek-info-card less-height","value":"div.geek-info-card.less-height","prefix":">"},{"tag":"div","index":0,"className":"candidate-list-content","value":"div.candidate-list-content","prefix":">"},{"tag":"div","index":0,"className":"card-inner","value":"div.card-inner","prefix":">"},{"tag":"div","index":0,"className":"col-2","value":"div.col-2","prefix":">"},{"tag":"div","index":0,"className":"info-labels","value":"div.info-labels","prefix":">"}],"props":["text"]},{"selecors":[{"tag":"div","index":0,"className":"sec-content candidate-card","value":"div.sec-content.candidate-card","prefix":""},{"tag":"ul","index":0,"className":"recommend-card-list ul-less-height","value":"ul.recommend-card-list.ul-less-height","prefix":">"},{"tag":"li","value":"li","index":0,"prefix":">"},{"tag":"div","index":0,"className":"","value":"div","prefix":">"},{"tag":"div","index":0,"className":"geek-info-card less-height","value":"div.geek-info-card.less-height","prefix":">"},{"tag":"div","index":0,"className":"candidate-list-content","value":"div.candidate-list-content","prefix":">"},{"tag":"div","index":0,"className":"card-inner","value":"div.card-inner","prefix":">"},{"tag":"div","index":0,"className":"col-2","value":"div.col-2","prefix":">"},{"tag":"div","index":0,"className":"expect-box","value":"div.expect-box","prefix":">"}],"props":["text"]},{"selecors":[{"tag":"div","index":0,"className":"sec-content candidate-card","value":"div.sec-content.candidate-card","prefix":""},{"tag":"ul","index":0,"className":"recommend-card-list ul-less-height","value":"ul.recommend-card-list.ul-less-height","prefix":">"},{"tag":"li","value":"li","index":0,"prefix":">"},{"tag":"div","index":0,"className":"","value":"div","prefix":">"},{"tag":"div","index":0,"className":"geek-info-card less-height","value":"div.geek-info-card.less-height","prefix":">"},{"tag":"div","index":0,"className":"candidate-list-content","value":"div.candidate-list-content","prefix":">"},{"tag":"div","index":0,"className":"card-inner","value":"div.card-inner","prefix":">"},{"tag":"div","index":0,"className":"col-2","value":"div.col-2","prefix":">"},{"tag":"div","index":0,"className":"position-box position-advantage","value":"div.position-box.position-advantage","prefix":">"},{"tag":"div","index":0,"className":"advantage-new","value":"div.advantage-new","prefix":">"}],"props":["text"]},{"selecors":[{"tag":"div","index":0,"className":"sec-content candidate-card","value":"div.sec-content.candidate-card","prefix":""},{"tag":"ul","index":0,"className":"recommend-card-list ul-less-height","value":"ul.recommend-card-list.ul-less-height","prefix":">"},{"tag":"li","value":"li","index":0,"prefix":">"},{"tag":"div","index":0,"className":"","value":"div","prefix":">"},{"tag":"div","index":0,"className":"geek-info-card less-height","value":"div.geek-info-card.less-height","prefix":">"},{"tag":"div","index":0,"className":"candidate-list-content","value":"div.candidate-list-content","prefix":">"},{"tag":"div","index":0,"className":"card-inner","value":"div.card-inner","prefix":">"},{"tag":"div","index":0,"className":"col-3","value":"div.col-3","prefix":">"}],"props":["text"]}]},{"objNextLinkElement":"","iMaxNumberOfPage":5,"iMaxNumberOfResult":-1,"iDelayBetweenMS":1000,"bContinueOnError":False})
-    
-    
+   
+   
     iRetFather = Len(arrayData)
-    TracePrint('¹²»ñÈ¡µ½µÄºòÑ¡ÈËÊıÁ¿Îª£º'& iRetFather)
-    
+    TracePrint('å…±è·å–åˆ°çš„å€™é€‰äººæ•°é‡ä¸ºï¼š'& iRetFather)
+   
     iRetSon = Len(arrayData[0])
-    // ´ò¿ªÒ»¸ö¿Õ°×excel ÓÃÓÚ´æ´¢»ñÈ¡µÄºòÑ¡ÈËÊı¾İ----µ÷ÊÔÊ±×¢ÊÍ
+    // æ‰“å¼€ä¸€ä¸ªç©ºç™½excel ç”¨äºå­˜å‚¨è·å–çš„å€™é€‰äººæ•°æ®----è°ƒè¯•æ—¶æ³¨é‡Š
     // objExcelWorkBook = Excel.OpenExcel('''C:\Users\Administrator\Desktop\boss.xlsx''',True,"Excel","","")
-    
-    
-    // objExcelWorkBook = Excel.OpenExcel('''C:\Users\Administrator\Desktop\ÕĞºôÀúÊ·.xlsx''',True,"Excel","","")
+   
+   
+    // objExcelWorkBook = Excel.OpenExcel('''C:\Users\Administrator\Desktop\æ‹›å‘¼å†å².xlsx''',True,"Excel","","")
     For y = 1 To iRetFather Step 1
         arrayDataHistory =[]
         sRet = ""
-        // 2. ĞÕÃûÕıÔò ÅÅ³ıº¬Íâ°ü/ÍâÅÉÈËÔ±
+        // 2. å§“åæ­£åˆ™ æ’é™¤å«å¤–åŒ…/å¤–æ´¾äººå‘˜
         findName = ""
-        // 3. ¹¤×÷ÄêÏŞ (´óÓÚµÈÓÚÈıÄê)
+        // 3. å·¥ä½œå¹´é™ (å¤§äºç­‰äºä¸‰å¹´)
         workYear = 0
-        // 4. ÇóÖ°ÆÚÍû(º¬Ç°¶Ë/Javascript/HTML/web)
+        // 4. æ±‚èŒæœŸæœ›(å«å‰ç«¯/Javascript/HTML/web)
         expectJob = ""
-        // 5. ÄêÁä£¨<=30£©
+        // 5. å¹´é¾„ï¼ˆ<=30ï¼‰
         age = ""
-        // 6.ÇóÖ°¼ò½é
+        // 6.æ±‚èŒç®€ä»‹
         summary = ""
-        // 7. ÔÚÖ°-Ôİ²»¿¼ÂÇ
+        // 7. åœ¨èŒ-æš‚ä¸è€ƒè™‘
         working = ""
-        // 8.ÒªÇóÕÆÎÕreact
+        // 8.è¦æ±‚æŒæ¡react
         require_react = ""
-        // 9. Ñ§Àú
+        // 9. å­¦å†
         certificate = ""
-        // 10. »îÔ¾×´Ì¬
+        // 10. æ´»è·ƒçŠ¶æ€
         active_status = ""
-        
-        
-        // ÅĞ¶Ïµ±Ç°ºòÑ¡ÈËÊÇ·ñ±»ÆäËûÕĞÆ¸¹ËÎÊÑ¯ÎÊ¹ı
+       
+       
+        // åˆ¤æ–­å½“å‰å€™é€‰äººæ˜¯å¦è¢«å…¶ä»–æ‹›è˜é¡¾é—®è¯¢é—®è¿‡
         #icon("@res:tsa5vmg6-jqmn-84hv-j1pi-4ep57tkmtib5.png")
         // Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"EM","parentid":"recommend-list","css-selector":"body>div>div>div>div>div>div>div>div>div>ul>li>div>div>div>div>em.iboss-goutongjilu","idx":y-1}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":3000,"iDelayBefore":3000,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
         // arrayDataHistory = UiElement.DataScrap({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"HTML"}]},{"ExtractTable":0,"Columns":[{"selecors":[{"tag":"div","index":0,"className":"dialog-wrap dialog-prop-default coop-record-wrap","value":"div.dialog-wrap.dialog-prop-default.coop-record-wrap","prefix":""},{"tag":"div","index":0,"className":"dialog-container","value":"div.dialog-container","prefix":">"},{"tag":"div","index":0,"className":"dialog-con","value":"div.dialog-con","prefix":">"},{"tag":"div","index":0,"className":"chat-record-content","value":"div.chat-record-content","prefix":">"},{"tag":"ul","index":0,"className":"record","value":"ul.record","prefix":">"},{"tag":"li","value":"li","index":0,"prefix":">"},{"tag":"div","index":0,"className":"","value":"div","prefix":">"},{"tag":"p","index":0,"className":"action","value":"p.action","prefix":">"}],"props":["text"]},{"selecors":[{"tag":"div","index":0,"className":"dialog-wrap dialog-prop-default coop-record-wrap","value":"div.dialog-wrap.dialog-prop-default.coop-record-wrap","prefix":""},{"tag":"div","index":0,"className":"dialog-container","value":"div.dialog-container","prefix":">"},{"tag":"div","index":0,"className":"dialog-con","value":"div.dialog-con","prefix":">"},{"tag":"div","index":0,"className":"chat-record-content","value":"div.chat-record-content","prefix":">"},{"tag":"ul","index":0,"className":"record","value":"ul.record","prefix":">"},{"tag":"li","value":"li","index":0,"prefix":">"},{"tag":"div","index":0,"className":"","value":"div","prefix":">"},{"tag":"p","index":0,"className":"operat","value":"p.operat","prefix":">"}],"props":["text"]}]},{"objNextLinkElement":"","iMaxNumberOfPage":5,"iMaxNumberOfResult":-1,"iDelayBetweenMS":1000,"bContinueOnError":False})
-        // TracePrint(arrayData[y-1][0]&"ÎªµÚ"&y-1&"¸öºòÑ¡ÈË+------+"&arrayDataHistory[0][1])
-        // // µ±Ç°Ê±¼ä
+        // TracePrint(arrayData[y-1][0]&"ä¸ºç¬¬"&y-1&"ä¸ªå€™é€‰äºº+------+"&arrayDataHistory[0][1])
+        // // å½“å‰æ—¶é—´
         // nowTime = Time.Now()
-        // // Ä¿±êÊ±¼ä×ª»»
+        // // ç›®æ ‡æ—¶é—´è½¬æ¢
         // midTime = Regex.Replace(arrayDataHistory[0][1],"-|:|\\s",",",0)
         // midArray = Split(midTime, ',')
         // targetTime = Time.TimeSerial(CInt(midArray[0]),CInt(midArray[1]),CInt(midArray[2]),CInt(midArray[3]),CInt(midArray[4]),0)
-        // // ¼ÆËã²îÖµ
+        // // è®¡ç®—å·®å€¼
         // leftTime = Time.DateDiff("d",targetTime,nowTime)
-        // // TracePrint(arrayData[y-1][0]&"ÎªµÚ"&y-1&"¸öºòÑ¡ÈË+------+×î½üÒ»´Î´òÕĞºôÊ±¼ä£º"&leftTime)
+        // // TracePrint(arrayData[y-1][0]&"ä¸ºç¬¬"&y-1&"ä¸ªå€™é€‰äºº+------+æœ€è¿‘ä¸€æ¬¡æ‰“æ‹›å‘¼æ—¶é—´ï¼š"&leftTime)
         // arrRet = push(arrayData[y-1],leftTime)
-        
+       
         // #icon("@res:uhs4jjt2-ut6c-763u-uqiq-snutfinv099u.png")
         // Mouse.Action({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"I","css-selector":"body>div>div>div>a>i"}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
-        
-        
-        
+       
+       
+       
         // TracePrint(arrayData[y-1])
-        
+       
         // arrayDataHello = UiElement.DataScrap({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"HTML"}]},{"ExtractTable":0,"Columns":[{"selecors":[{"tag":"div","index":0,"className":"dialog-wrap dialog-prop-default coop-record-wrap","value":"div.dialog-wrap.dialog-prop-default.coop-record-wrap","prefix":""},{"tag":"div","index":0,"className":"dialog-container","value":"div.dialog-container","prefix":">"},{"tag":"div","index":0,"className":"dialog-con","value":"div.dialog-con","prefix":">"},{"tag":"div","index":0,"className":"chat-record-content","value":"div.chat-record-content","prefix":">"},{"tag":"ul","index":0,"className":"record","value":"ul.record","prefix":">"},{"tag":"li","value":"li","index":0,"prefix":">"},{"tag":"div","index":0,"className":"","value":"div","prefix":">"},{"tag":"p","index":0,"className":"action","value":"p.action","prefix":">"}],"props":["text"]},{"selecors":[{"tag":"div","index":0,"className":"dialog-wrap dialog-prop-default coop-record-wrap","value":"div.dialog-wrap.dialog-prop-default.coop-record-wrap","prefix":""},{"tag":"div","index":0,"className":"dialog-container","value":"div.dialog-container","prefix":">"},{"tag":"div","index":0,"className":"dialog-con","value":"div.dialog-con","prefix":">"},{"tag":"div","index":0,"className":"chat-record-content","value":"div.chat-record-content","prefix":">"},{"tag":"ul","index":0,"className":"record","value":"ul.record","prefix":">"},{"tag":"li","value":"li","index":0,"prefix":">"},{"tag":"div","index":0,"className":"","value":"div","prefix":">"},{"tag":"p","index":0,"className":"operat","value":"p.operat","prefix":">"}],"props":["text"]}]},{"objNextLinkElement":"","iMaxNumberOfPage":5,"iMaxNumberOfResult":-1,"iDelayBetweenMS":1000,"bContinueOnError":False})
-        
+       
         // TracePrint(arrayDataHello &"arraydatahello---")
-        
+       
         // helloFather = Len(arrayDataHello)
         // helloSon = Len(arrayDataHello[0])
-        
-        // TracePrint(helloFather&"--"& helloSon &"ÀúÊ·ÕĞºôĞÅÏ¢---")
-        
+       
+        // TracePrint(helloFather&"--"& helloSon &"å†å²æ‹›å‘¼ä¿¡æ¯---")
+       
         // For x = 1 To helloFather Step 1
-        
+       
         // For k = 1 To helloSon Step 1
         // Excel.WriteCell(objExcelWorkBook,"Sheet1",Chr(64+k)&x,arrayData[x-1][k-1],False)
         // Next
         // Next
-        
+       
         // For i = 1 To iRetSon Step 1
-        // [ĞÕÃû, »îÔ¾×´Ì¬, Ğ½×Ê·¶Î§, ÄêÁä ¹¤×÷ÄêÏŞ, ÇóÖ°ÆÚÍû, ÇóÖ°¼ò½é, ÀúÊ·¹¤×÷¹«Ë¾ ±ÏÒµÑ§Ğ£]
-        
-        //1. °´Å¥ÎÄ±¾ÊÇ·ñÎª"¼ÌĞø¹µÍ¨"
+        // [å§“å, æ´»è·ƒçŠ¶æ€, è–ªèµ„èŒƒå›´, å¹´é¾„ å·¥ä½œå¹´é™, æ±‚èŒæœŸæœ›, æ±‚èŒç®€ä»‹, å†å²å·¥ä½œå…¬å¸ æ¯•ä¸šå­¦æ ¡]
+       
+        //1. æŒ‰é’®æ–‡æœ¬æ˜¯å¦ä¸º"ç»§ç»­æ²Ÿé€š"
         #icon("@res:80me7dm2-gukr-6uo4-chh9-asd0pee45v95.png")
         sRet = UiElement.GetValue({"wnd":[{"cls":"MozillaWindowClass","title":"*","app":"firefox"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"BUTTON","type":"button","parentid":"recommend-list","idx":y-1}]},{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200})
-        TracePrint(sRet& "--ÊÇ·ñ¼ÌĞø¹µÍ¨")
-        
-        // 2. ĞÕÃûÕıÔò ÅÅ³ıº¬Íâ°ü/ÍâÅÉÈËÔ±
-        findName = Regex.FindStr(arrayData[y-1][0],"Íâ°ü|ÍâÅÉ",0)
-        TracePrint("Ô´ÎÄ±¾£º"&arrayData[y-1][0] &"Æ¥ÅäºóÏÔÊ¾£º"&findName& "--ĞÕÃû")
-        
-        // 3. ¹¤×÷ÄêÏŞ (´óÓÚµÈÓÚÈıÄê)
-        workYear = cint(DigitFromStr(Regex.FindStr(arrayData[y-1][3],'([0-9]+Äê)(?!Ó¦½ì)',0)))
-        TracePrint(workYear& "--¹¤×÷ÄêÏŞ")
-        
-        // 4. ÇóÖ°ÆÚÍû(º¬Ç°¶Ë/Javascript/HTML/web)
-        expectJob = Regex.FindStr(arrayData[y-1][4],'Ç°¶Ë|(?i)javascript|html|(?i)web',0)
-        TracePrint("Ô´ÎÄ±¾£º"& arrayData[y-1][4] &"Æ¥ÅäºóÏÔÊ¾£º"& expectJob & "--ÇóÖ°ÆÚÍû")
-        
-        // 5. ÄêÁä£¨<=30£©
-        age = cint(DigitFromStr(Regex.FindStr(arrayData[y-1][3],'[0-9]+Ëê',0)))
-        TracePrint("Ô´ÎÄ±¾£º"& arrayData[y-1][3] &"Æ¥ÅäºóÏÔÊ¾£º"& age & "--ÄêÁä")
-        
-        // 6.ÇóÖ°¼ò½é
-        summary = Regex.FindStr(arrayData[y-1][5],"Íâ°ü|ÍâÅÉ",0)
-        TracePrint(summary& "--ÇóÖ°¼ò½é")
-        
-        // 7. È¥³ı "ÔÚÖ°-Ôİ²»¿¼ÂÇ"
-        working = Regex.FindStr(arrayData[y-1][3],"ÔÚÖ°-Ôİ²»¿¼ÂÇ",0)
-        TracePrint(working& "--ÇóÖ°¼ò½é")
-        
-        // 8.ÒªÇóÕÆÎÕreact
-        require_react = Regex.FindStr(arrayData[y-1][5],'(?i)react',0)
+        TracePrint(sRet& "--æ˜¯å¦ç»§ç»­æ²Ÿé€š")
+       
+        // 2. å§“åæ­£åˆ™ æ’é™¤å«å¤–åŒ…/å¤–æ´¾äººå‘˜
+        findName = Regex.FindStr(arrayData[y-1][0],"å¤–åŒ…|å¤–æ´¾",0)
+        TracePrint("æºæ–‡æœ¬ï¼š"&arrayData[y-1][0] &"åŒ¹é…åæ˜¾ç¤ºï¼š"&findName& "--å§“å")
+       
+        // 3. å·¥ä½œå¹´é™ (å¤§äºç­‰äºä¸‰å¹´)
+        workYear = cint(DigitFromStr(Regex.FindStr(arrayData[y-1][3],'([0-9]+å¹´)(?!åº”å±Š)',0)))
+        TracePrint(workYear& "--å·¥ä½œå¹´é™")
+       
+        // 4. æ±‚èŒæœŸæœ›(å«å‰ç«¯/Javascript/HTML/web)
+        expectJob = Regex.FindStr(arrayData[y-1][4],'æµ‹è¯•',0)
+        TracePrint("æºæ–‡æœ¬ï¼š"& arrayData[y-1][4] &"åŒ¹é…åæ˜¾ç¤ºï¼š"& expectJob & "--æ±‚èŒæœŸæœ›")
+       
+        // 5. å¹´é¾„ï¼ˆ<=30ï¼‰
+        age = cint(DigitFromStr(Regex.FindStr(arrayData[y-1][3],'[0-9]+å²',0)))
+        TracePrint("æºæ–‡æœ¬ï¼š"& arrayData[y-1][3] &"åŒ¹é…åæ˜¾ç¤ºï¼š"& age & "--å¹´é¾„")
+       
+        // 6.æ±‚èŒç®€ä»‹
+        summary = Regex.FindStr(arrayData[y-1][5],"å¤–åŒ…|å¤–æ´¾",0)
+        TracePrint(summary& "--æ±‚èŒç®€ä»‹")
+       
+        // 7. å»é™¤ "åœ¨èŒ-æš‚ä¸è€ƒè™‘"
+        working = Regex.FindStr(arrayData[y-1][3],"åœ¨èŒ-æš‚ä¸è€ƒè™‘",0)
+        TracePrint(working& "--æ±‚èŒç®€ä»‹")
+       
+        // 8.è¦æ±‚æŒæ¡react
+        require_react = Regex.FindStr(arrayData[y-1][5],'æ€§èƒ½æµ‹è¯•|åŠŸèƒ½æµ‹è¯•|å‹åŠ›æµ‹è¯•|å‹æµ‹|è„šæœ¬|å¼€å‘è„šæœ¬',0)
         TracePrint(findName&"--"&require_react& "--require_react")
-        
-        // 9. Ñ§Àú£¨´ó×¨|±¾¿Æ|Ë¶Ê¿£©
-        certificate = cint(DigitFromStr(Regex.FindStr(arrayData[y-1][3],'´ó×¨|±¾¿Æ|Ë¶Ê¿',0)))
-        TracePrint("Ô´ÎÄ±¾£º"& arrayData[y-1][3] &"Æ¥ÅäºóÏÔÊ¾£º"& certificate & "--Ñ§Àú")
-        
-        // 10. »îÔ¾×´Ì¬
-        active_status = Regex.FindStr(arrayData[y-1][1],"¸Õ¸Õ|½ñÈÕ|3ÈÕ|±¾ÖÜ|2ÖÜ",0)
-        TracePrint(active_status& "--»îÔ¾×´Ì¬")
-            
-            
-        
-        If sRet <> "¼ÌĞø¹µÍ¨" And findName ="" And workYear >= 5 And expectJob <> "" And age <=30 And summary ="" And working ="" And require_react <> "" And certificate <>"" And active_status <>""
+       
+        // 9. å­¦å†ï¼ˆå¤§ä¸“|æœ¬ç§‘|ç¡•å£«ï¼‰
+        certificate = cint(DigitFromStr(Regex.FindStr(arrayData[y-1][3],'æœ¬ç§‘|ç¡•å£«',0)))
+        TracePrint("æºæ–‡æœ¬ï¼š"& arrayData[y-1][3] &"åŒ¹é…åæ˜¾ç¤ºï¼š"& certificate & "--å­¦å†")
+       
+        // 10. æ´»è·ƒçŠ¶æ€
+        active_status = Regex.FindStr(arrayData[y-1][1],"åˆšåˆš|ä»Šæ—¥|3æ—¥|æœ¬å‘¨|2å‘¨",0)
+        TracePrint(active_status& "--æ´»è·ƒçŠ¶æ€")
+       
+       
+       
+        If sRet <> "ç»§ç»­æ²Ÿé€š" And findName ="" And workYear >= 3 And expectJob <> "" And age <=35 And summary ="" And working ="" And require_react <> "" And certificate <>"" And active_status <>""
             #icon("@res:9dius7o2-0t3v-kb14-hk2u-7m62k27kvlf2.png")
             // Mouse.Hover({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"BUTTON","parentid":"recommend-list","idx":y-1}]},10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
             #icon("@res:a96v8b09-hmu1-vpf4-al11-lmevupf6sli4.png")
             Mouse.Action({"wnd":[{"cls":"MozillaWindowClass","title":"*","app":"firefox"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"BUTTON","type":"button","parentid":"recommend-list","idx":y-1}]},"left","click",10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
-            // TracePrint("ÒÑÉ¸Ñ¡ºòÈËÑ¡ÊıÁ¿Îª£º"& y)
+            // TracePrint("å·²ç­›é€‰å€™äººé€‰æ•°é‡ä¸ºï¼š"& y)
         Else
             // Break
-            TracePrint(arrayData[y-1][0]&"£º²»·ûºÏÌõ¼ş----")
+            TracePrint(arrayData[y-1][0]&"ï¼šä¸ç¬¦åˆæ¡ä»¶----")
         End If
         // Excel.WriteCell(objExcelWorkBook,"Sheet1",Chr(64+i)&y,arrayData[y-1][i-1],False)
         // Next
     Next
-    
-    
+   
+   
     // For y = 1 To 1 Step 1
     // #icon("@res:ir1stmts-aj2p-9vae-tir6-gnqogf566pdu.png")
     // Mouse.Hover({"wnd":[{"cls":"Chrome_WidgetWin_1","title":"*","app":"chrome"},{"cls":"Chrome_RenderWidgetHostHWND","title":"Chrome Legacy Window"}],"html":[{"tag":"IFRAME","name":"recommendFrame"},{"tag":"BUTTON","parentid":"recommend-list","idx":2}]},10000,{"bContinueOnError":False,"iDelayAfter":300,"iDelayBefore":200,"bSetForeground":True,"sCursorPosition":"Center","iCursorOffsetX":0,"iCursorOffsetY":0,"sKeyModifiers":[],"sSimulate":"simulate","bMoveSmoothly":False})
@@ -213,17 +212,5 @@ Next
 
 
 
-
-
-
-
-
-
 ```
-
-
-
-
-
-
 
